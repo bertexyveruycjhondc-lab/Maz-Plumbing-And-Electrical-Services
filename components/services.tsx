@@ -1,6 +1,6 @@
 'use client'
 
-import { Wrench, Zap, Shield } from 'lucide-react'
+import { Wrench, Zap, Shield, Droplet, Lightbulb, Cpu } from 'lucide-react'
 
 export default function Services() {
   const services = [
@@ -21,6 +21,24 @@ export default function Services() {
       desc: 'Concierge-level emergency response and preventive care to maintain your infrastructure at pinnacle performance.',
       icon: Shield,
       image: 'https://images.unsplash.com/photo-1517480448885-4fd3d563ea2b?q=80&w=2000&auto=format&fit=crop',
+    },
+    {
+      title: 'Filtration Mastery',
+      desc: 'State-of-the-art water purification and softening systems delivering crystal-clear, health-optimized water throughout your home.',
+      icon: Droplet,
+      image: 'https://images.unsplash.com/photo-1583947581924-860f6d63e8e7?q=80&w=2000&auto=format&fit=crop',
+    },
+    {
+      title: 'Illumination Mastery',
+      desc: 'Bespoke lighting design, architectural installations, and intelligent dimming systems that sculpt atmosphere with precision.',
+      icon: Lightbulb,
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop',
+    },
+    {
+      title: 'Automation Excellence',
+      desc: 'Seamless smart home ecosystems integrating lighting, climate, security, and entertainment into one effortless experience.',
+      icon: Cpu,
+      image: 'https://images.unsplash.com/photo-1558618047-3c8c76a0d7e1?q=80&w=2000&auto=format&fit=crop',
     },
   ]
 
