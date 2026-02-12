@@ -12,43 +12,15 @@ export default function About() {
               About Our Company
             </span>
             <h2 className="text-5xl md:text-6xl font-serif font-bold text-white mt-4 mb-8 text-balance">
-              Three Decades of Uncompromising Excellence
+              Your Premier Partner in Home Transformation
             </h2>
             <p className="text-lg text-slate-300 mb-6 leading-relaxed">
-              Since our establishment, Maz Plumbing & Electrical has been the trusted choice for those who demand
-              perfection. Our team of master technicians brings decades of combined experience to every project,
-              ensuring flawless execution and exceptional results.
+              At Maz Plumbing & Electrical Services, we transform ordinary spaces into extraordinary havens. Established in Quezon City, our dedicated team of certified experts brings passion, precision, and innovation to every project—whether it's flawless plumbing installations, state-of-the-art electrical systems, complete home renovations, or bespoke modular designs.
             </p>
             <p className="text-lg text-slate-300 mb-12 leading-relaxed">
-              We believe that true craftsmanship never compromises. Every connection, every wire, every fixture is
-              installed with meticulous attention to detail and an unwavering commitment to excellence.
+              We pride ourselves on using only premium materials and cutting-edge techniques to deliver results that stand the test of time. Our unwavering commitment to customer satisfaction means personalized service, transparent communication, and solutions tailored to your unique vision. Experience the difference of true craftsmanship—choose Maz for reliability, elegance, and peace of mind in every detail.
             </p>
-
-            <div className="grid grid-cols-3 gap-8">
-              <div className="animate-scale-in" style={{ animationDelay: '100ms' }}>
-                <div className="flex items-center gap-3 mb-3">
-                  <Award size={28} className="text-gold-500" />
-                  <span className="text-3xl font-bold text-white">1000+</span>
-                </div>
-                <p className="text-slate-300 text-sm">Projects Completed</p>
-              </div>
-              <div className="animate-scale-in" style={{ animationDelay: '200ms' }}>
-                <div className="flex items-center gap-3 mb-3">
-                  <Users size={28} className="text-gold-500" />
-                  <span className="text-3xl font-bold text-white">98%</span>
-                </div>
-                <p className="text-slate-300 text-sm">Client Satisfaction</p>
-              </div>
-              <div className="animate-scale-in" style={{ animationDelay: '300ms' }}>
-                <div className="flex items-center gap-3 mb-3">
-                  <Clock size={28} className="text-gold-500" />
-                  <span className="text-3xl font-bold text-white">30+</span>
-                </div>
-                <p className="text-slate-300 text-sm">Years in Business</p>
-              </div>
-            </div>
           </div>
-
           <div className="relative animate-fade-in-right">
             <div className="absolute -inset-4 gold-gradient opacity-20 blur-2xl rounded-lg"></div>
             <img
