@@ -15,10 +15,10 @@ export default function About() {
               Your Premier Partner in Home Transformation
             </h2>
             <p className="text-lg text-slate-300 mb-6 leading-relaxed">
-              At Maz Plumbing & Electrical Services, we transform ordinary spaces into extraordinary havens. Established in Quezon City, our dedicated team of certified experts brings passion, precision, and innovation to every project—whether it's flawless plumbing installations, state-of-the-art electrical systems, complete home renovations, or bespoke modular designs.
+              At Maz Plumbing & Electrical Services, we transform ordinary spaces into extraordinary havens. Established in Quezon City, our dedicated team of certified experts brings passion, precision, and innovation to every project whether it's flawless plumbing installations, state-of-the-art electrical systems, complete home renovations, or bespoke modular designs.
             </p>
             <p className="text-lg text-slate-300 mb-12 leading-relaxed">
-              We pride ourselves on using only premium materials and cutting-edge techniques to deliver results that stand the test of time. Our unwavering commitment to customer satisfaction means personalized service, transparent communication, and solutions tailored to your unique vision. Experience the difference of true craftsmanship—choose Maz for reliability, elegance, and peace of mind in every detail.
+              We pride ourselves on using only premium materials and cutting-edge techniques to deliver results that stand the test of time. Our unwavering commitment to customer satisfaction means personalized service, transparent communication, and solutions tailored to your unique vision. Experience the difference of true craftsmanship choose Maz for reliability, elegance, and peace of mind in every detail.
             </p>
           </div>
           <div className="relative animate-fade-in-right">
