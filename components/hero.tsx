@@ -7,13 +7,12 @@ export default function Hero() {
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop"
-          alt="Plumbing and Electrical"
+          src="/roofing-services-flyer.jpg" // Path to your uploaded image - place the uploaded photo in your public folder and reference it here
+          alt="Maz Roofing Services"
           className="w-full h-full object-cover opacity-50 scale-105 hover:scale-110 transition-transform duration-[60s]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/70 to-transparent"></div>
       </div>
-
       <div className="container mx-auto px-6 relative z-10 text-center mt-16 animate-fade-in-up">
         <span className="text-gold-400 uppercase tracking-[0.4em] text-sm font-semibold mb-6 block">
           Established in Quezon City
