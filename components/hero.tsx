@@ -9,7 +9,7 @@ export default function Hero() {
         <img
           src="/roofing-services-flyer.jpg" // Path to your uploaded image - place the uploaded photo in your public folder and reference it here
           alt="Maz Roofing Services"
-          className="w-full h-full object-cover opacity-50 scale-105 hover:scale-110 transition-transform duration-[60s]"
+          className="w-full h-full object-contain opacity-50 transition-transform duration-[60s]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/70 to-transparent"></div>
       </div>
