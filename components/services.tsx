@@ -1,44 +1,56 @@
 'use client'
 
-import { Wrench, Zap, Shield, Droplet, Lightbulb, Cpu } from 'lucide-react'
+import { Home, Box, Zap, Wrench, Utensils, Hammer, PaintBucket, Layers } from 'lucide-react'
 
 export default function Services() {
   const services = [
     {
-      title: 'Hydraulic Mastery',
-      desc: 'Bespoke plumbing systems, advanced leak detection, and exquisite fixture installations crafted for enduring elegance.',
-      icon: Wrench,
-      image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?q=80&w=2000&auto=format&fit=crop',
+      title: 'Home & Store Renovation Mastery',
+      desc: 'Transformative designs, premium materials, and meticulous craftsmanship for spaces that inspire and endure.',
+      icon: Home,
+      image: 'https://images.unsplash.com/photo-1600210491892-03d54c0caf48?q=80&w=2000&auto=format&fit=crop',
     },
     {
-      title: 'Electrical Excellence',
-      desc: 'Sophisticated wiring, seamless smart home integration, and rigorous safety protocols for flawless power delivery.',
+      title: 'Modular Cabinets Excellence',
+      desc: 'Customizable storage solutions, innovative configurations, and superior quality for organized elegance in any space.',
+      icon: Box,
+      image: 'https://images.unsplash.com/photo-1588854337226-6889d631faa8?q=80&w=2000&auto=format&fit=crop',
+    },
+    {
+      title: 'Electrical Wiring Expertise',
+      desc: 'Advanced electrical installations, safety-compliant wiring, and efficient systems for reliable power delivery.',
       icon: Zap,
-      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2000&auto=format&fit=crop',
+      image: 'https://neuroncdn.com/cdn-0001/21574d42aa8c74c795946c96774d94101022fd135d4b46d720e0c3e6d7b4c9ce?ts=1729998962',
     },
     {
-      title: 'Elite Maintenance',
-      desc: 'Concierge-level emergency response and preventive care to maintain your infrastructure at pinnacle performance.',
-      icon: Shield,
-      image: 'https://images.unsplash.com/photo-1517480448885-4fd3d563ea2b?q=80&w=2000&auto=format&fit=crop',
+      title: 'Plumbing Services Mastery',
+      desc: 'Precision pipework, leak-proof fixtures, and comprehensive plumbing solutions for seamless water management.',
+      icon: Wrench,
+      image: 'https://cdn.prod.website-files.com/672c783eb245d962f945af09/68eea82878dd4340db018b98_43814babaef64f8a65700367867d774ab6276a15.jpeg',
     },
     {
-      title: 'Filtration Mastery',
-      desc: 'State-of-the-art water purification and softening systems delivering crystal-clear, health-optimized water throughout your home.',
-      icon: Droplet,
-      image: 'https://images.unsplash.com/photo-1583947581924-860f6d63e8e7?q=80&w=2000&auto=format&fit=crop',
+      title: 'Kitchen Renovation Mastery',
+      desc: 'Gourmet kitchen transformations, high-end appliances, and ergonomic designs for culinary excellence and comfort.',
+      icon: Utensils,
+      image: 'https://napleskb.com/wp-content/uploads/Blog-NKB-Kitchen-Before-After.jpg',
     },
     {
-      title: 'Illumination Mastery',
-      desc: 'Bespoke lighting design, architectural installations, and intelligent dimming systems that sculpt atmosphere with precision.',
-      icon: Lightbulb,
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop',
+      title: 'Roof Renovation Excellence',
+      desc: 'Durable roofing materials, expert repairs, and weather-resistant installations for lasting protection and aesthetics.',
+      icon: Hammer,
+      image: 'https://images.unsplash.com/photo-1620283137103-062f6835a2b5?q=80&w=2000&auto=format&fit=crop',
     },
     {
-      title: 'Automation Excellence',
-      desc: 'Seamless smart home ecosystems integrating lighting, climate, security, and entertainment into one effortless experience.',
-      icon: Cpu,
-      image: 'https://images.unsplash.com/photo-1558618047-3c8c76a0d7e1?q=80&w=2000&auto=format&fit=crop',
+      title: 'Waterproofing & Painting Mastery',
+      desc: 'Superior waterproofing techniques, premium paints, and flawless finishes for enduring beauty and protection.',
+      icon: PaintBucket,
+      image: 'https://www.americanhillcountrygutters.com/wp-content/uploads/2015/12/worker-painting-house-trim.jpg',
+    },
+    {
+      title: 'Flooring Installation Expertise',
+      desc: 'Exquisite flooring options, professional laying, and durable surfaces for sophisticated and resilient foundations.',
+      icon: Layers,
+      image: 'https://i.ytimg.com/vi/UMEO2T7dv_8/maxresdefault.jpg',
     },
   ]
 
