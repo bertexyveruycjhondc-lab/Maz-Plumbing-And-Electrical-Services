@@ -7,7 +7,7 @@ export default function Testimonials() {
     {
       name: 'Ken Jo',
       role: 'Verified Customer',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
+      image: '/images/ken.png',
       quote:
         'Very good in service. Keep it up!',
       rating: 5,
@@ -15,7 +15,7 @@ export default function Testimonials() {
     {
       name: 'Sha Simeon',
       role: 'Verified Customer',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop',
+      image: '/images/sha.jpg',
       quote:
         'Recommended. My go to for home services!',
       rating: 5,
@@ -23,7 +23,7 @@ export default function Testimonials() {
     {
       name: 'Sonny sus Erespe',
       role: 'Local Guide',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop',
+      image: '/images/sonny.jpg',
       quote:
         'To have - Excellent service and professionalism.',
       rating: 5,
@@ -31,7 +31,7 @@ export default function Testimonials() {
     {
       name: 'Iverson Ruña',
       role: 'Verified Customer',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
+      image: '/images/iverson.jpg',
       quote:
         'Highly satisfied with the plumbing and electrical services. Professional and efficient.',
       rating: 5,
