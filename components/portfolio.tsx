@@ -1,9 +1,6 @@
 'use client'
-import { useState, useEffect } from 'react'
 
 export default function Portfolio() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
   const images = [
     '/images/tv-wall.jpg',      // Your uploaded image 1: Modern TV feature wall with wood slats and LED lighting
     '/images/cabinet-assembly.jpg', // Your uploaded image 2: Team assembling dark wooden cabinets
@@ -15,14 +12,6 @@ export default function Portfolio() {
     '/images/exterior-scaffolding.jpg' // Your uploaded image 8: Team on scaffolding working on exterior ceiling and piping
   ]
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 3000) // Change image every 3 seconds
-
-    return () => clearInterval(timer)
-  }, [images.length])
-
   return (
     <section id="portfolio" className="py-32 bg-navy-800">
       <div className="container mx-auto px-6">
@@ -32,30 +21,16 @@ export default function Portfolio() {
           </h2>
           <div className="w-32 h-1 gold-gradient mx-auto"></div>
         </div>
-        <div className="relative w-full h-96 overflow-hidden rounded-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {images.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={`Project ${index + 1}`}
-              className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                index === currentIndex ? 'opacity-100' : 'opacity-0'
-              }`}
-            />
-          ))}
-          {/* Navigation Dots */}
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-2">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentIndex ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
+            <div key={index} className="relative overflow-hidden rounded-lg">
+              <img
+                src={src}
+                alt={`Project ${index + 1}`}
+                className="w-full h-auto object-contain"
               />
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
