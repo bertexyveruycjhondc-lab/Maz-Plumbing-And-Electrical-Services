@@ -38,7 +38,7 @@ export default function Portfolio() {
 
         {/* Slideshow */}
         <div
-          className="relative w-full max-w-5xl mx-auto bg-black rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center"
+          className="relative w-full max-w-6xl mx-auto h-96 bg-black rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -48,11 +48,12 @@ export default function Portfolio() {
               src={src}
               alt={`Project ${index + 1}`}
               className={`
+                absolute 
                 w-full 
-                h-auto
+                h-full
                 object-cover
                 transition-opacity duration-1000 ease-in-out
-                ${index === currentIndex ? 'opacity-100 z-10 absolute' : 'opacity-0 z-0 absolute'}
+                ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}
               `}
             />
           ))}
