@@ -5,27 +5,35 @@ import { Quote, Star } from 'lucide-react'
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Margaret Chen',
-      role: 'Luxury Estate Owner',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop',
-      quote:
-        'Maz elevated our entire home to a new standard of excellence. Every detail was executed with absolute precision. Truly artisan work.',
-      rating: 5,
-    },
-    {
-      name: 'Robert Fitzgerald',
-      role: 'Property Developer',
+      name: 'Ken Jo',
+      role: 'Verified Customer',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
       quote:
-        'For large-scale projects, there is simply no one better. Their technical expertise and reliability are unmatched in the industry.',
+        'Very good in service. Keep it up!',
       rating: 5,
     },
     {
-      name: 'Victoria Santos',
-      role: 'Interior Designer',
+      name: 'Sha Simeon',
+      role: 'Verified Customer',
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop',
+      quote:
+        'Recommended. My go to for home services!',
+      rating: 5,
+    },
+    {
+      name: 'Sonny sus Erespe',
+      role: 'Local Guide',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop',
       quote:
-        "I recommend Maz to all my high-end clients. They understand that craftsmanship is about more than just function—it's about artistry.",
+        'To have - Excellent service and professionalism.',
+      rating: 5,
+    },
+    {
+      name: 'Iverson Ruña',
+      role: 'Verified Customer',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
+      quote:
+        'Highly satisfied with the plumbing and electrical services. Professional and efficient.',
       rating: 5,
     },
   ]
@@ -40,7 +48,7 @@ export default function Testimonials() {
           <div className="w-32 h-1 gold-gradient mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
