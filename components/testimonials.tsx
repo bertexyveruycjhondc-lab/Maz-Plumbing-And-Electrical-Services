@@ -15,7 +15,7 @@ export default function Testimonials() {
     {
       name: 'Sha Simeon',
       role: 'Verified Customer',
-      image: '/images/sha.jpg',
+      image: '/images/sha.png',
       quote:
         'Recommended. My go to for home services!',
       rating: 5,
@@ -23,7 +23,7 @@ export default function Testimonials() {
     {
       name: 'Sonny sus Erespe',
       role: 'Local Guide',
-      image: '/images/sonny.jpg',
+      image: '/images/sonny.png',
       quote:
         'To have - Excellent service and professionalism.',
       rating: 5,
@@ -31,7 +31,7 @@ export default function Testimonials() {
     {
       name: 'Iverson Ruña',
       role: 'Verified Customer',
-      image: '/images/iverson.jpg',
+      image: '/images/iverson.png',
       quote:
         'Highly satisfied with the plumbing and electrical services. Professional and efficient.',
       rating: 5,
