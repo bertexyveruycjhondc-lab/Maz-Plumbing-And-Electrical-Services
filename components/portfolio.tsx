@@ -7,28 +7,52 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: 'Modern Wooden Slat TV Feature Wall',
-      category: 'Entertainment Unit & LED Design',
-      image: 'https://images.squarespace-cdn.com/content/v1/6854409c4933b941d0697a92/3020a0d6-667e-458e-bc6b-0e33edf0576b/01.jpeg',
-      description: 'Custom wood slat accent wall with integrated warm LED backlighting, floating console, and built-in shelving for a sleek, modern living room focal point.',
+      title: 'Modern TV Feature Wall',
+      category: 'Interior Design & Lighting',
+      image: 'https://i0.wp.com/homecompanionmag.com/wp-content/uploads/2024/09/Modern-TV-Wall-Decor-Ideas-8.jpg?resize=1095%2C730&ssl=1',
+      description: 'Custom vertical wood slat wall with integrated LED backlighting, wall-mounted TV, floating console, and adjacent shelving for a contemporary living space.',
     },
     {
-      title: 'Premium Kitchen Storage Cabinetry',
-      category: 'Custom Cabinetry & Joinery',
-      image: 'http://www.cabinetswarehouse.com/wp-content/uploads/2025/01/Image_20231211162508-scaled.jpg',
-      description: 'High-gloss white tall cabinet with glass sliding doors and internal shelving, designed for maximum storage and a clean, contemporary kitchen look.',
+      title: 'Custom Cabinet Assembly',
+      category: 'Furniture Installation',
+      image: 'https://media.angi.com/s3fs-public/Workers-doing-kitchen-installation-1470468188.jpg?impolicy=leadImage',
+      description: 'On-site assembly of bespoke wooden cabinets by skilled team, ensuring precise fit and high-quality finish in a modern interior setting.',
     },
     {
-      title: 'Water Pump & Pressure Tank Installation',
-      category: 'Plumbing & Utility Systems',
-      image: 'https://static.homeguide.com/assets/images/content/homeguide-cost-to-replace-well-pressure-tank-basement-water-supply-tank.jpg',
-      description: 'Professional setup of pressure tank, booster pump, and piping system in utility area for reliable water supply and pressure management.',
+      title: 'Residential Water System Installation',
+      category: 'Plumbing Infrastructure',
+      image: 'https://www.simplepump.com/site/images/blog/how-does-a-shallow-well-pump-work-with-a-pressure-tank/image.jpeg',
+      description: 'Expert setup of pressure tank, booster pump, and piping network for efficient home water supply and pressure regulation.',
     },
     {
-      title: 'Commercial Kiosk Fit-Out',
-      category: 'Retail & Commercial Interiors',
+      title: 'Commercial Yogurt Kiosk Build',
+      category: 'Retail Fit-Out',
       image: 'https://rockabitebaby.com/wp-content/uploads/2013/09/20130908_144027.jpg',
-      description: 'Complete build and installation of modern frozen yogurt outlet counter with branded signage, lighting, and queue management system.',
+      description: 'Full construction and branding of a frozen yogurt kiosk with illuminated signage, counter, and protective netting for mall readiness.',
+    },
+    {
+      title: 'Drain Unclogging Service',
+      category: 'Plumbing Maintenance',
+      image: 'http://blog.extremehowto.com/wp-content/uploads/2018/09/IMG_4299.jpg',
+      description: 'Professional use of industrial drain snake equipment to clear outdoor blockages, ensuring quick and effective resolution.',
+    },
+    {
+      title: 'Warehouse Ceiling Insulation',
+      category: 'Commercial Renovation',
+      image: 'https://thumbs.dreamstime.com/b/installation-insulation-panels-ceiling-new-commercial-warehouse-construction-site-workers-use-scissor-lift-to-install-369148544.jpg',
+      description: 'Large-scale installation of insulation panels on warehouse ceiling using scaffolding for energy efficiency and structural enhancement.',
+    },
+    {
+      title: 'Bespoke Kitchen Pantry',
+      category: 'Custom Cabinetry',
+      image: 'https://i.ytimg.com/vi/rXpSTs4BEBg/maxresdefault.jpg',
+      description: 'Tall white pantry with glass doors, adjustable shelves, and integrated power outlets for organized and functional kitchen storage.',
+    },
+    {
+      title: 'Exterior Ceiling & Roofing Work',
+      category: 'Construction & Repair',
+      image: 'https://foxhavenroof.com/wp-content/uploads/2025/11/roof-layers-inspection-workers-scaled.jpg',
+      description: 'Team on scaffolding performing precise ceiling and roofing renovations, including piping and structural adjustments for durability.',
     },
   ]
 
