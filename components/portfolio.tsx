@@ -51,7 +51,7 @@ export default function Portfolio() {
                 absolute inset-0
                 w-full 
                 h-full
-                object-cover
+                object-contain
                 transition-opacity duration-1000 ease-in-out
                 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}
               `}
