@@ -1,7 +1,5 @@
 'use client'
-
 import React from "react"
-
 import { useState } from 'react'
 import { Phone, MapPin, Mail, Send } from 'lucide-react'
 
@@ -40,7 +38,6 @@ export default function Contact() {
           </h2>
           <div className="w-32 h-1 gold-gradient mx-auto"></div>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
           {/* Contact Info Cards */}
           <div className="bg-navy-900 border border-navy-700 p-8 rounded-lg hover:border-gold-500/70 transition-all duration-500 hover:-translate-y-2 premium-shadow animate-fade-in-up">
@@ -48,29 +45,27 @@ export default function Contact() {
               <Phone size={32} className="text-gold-500" />
               <h3 className="text-2xl font-serif font-bold text-white">Call Us</h3>
             </div>
-            <p className="text-slate-300 text-lg mb-2">+63 912 345 6789</p>
+            <p className="text-slate-300 text-lg mb-2">+63 995 159 0071</p>
+            <p className="text-slate-300 text-lg mb-2">+63 917 771 1211</p>
             <p className="text-slate-400">Available 24/7 for emergencies</p>
           </div>
-
           <div className="bg-navy-900 border border-navy-700 p-8 rounded-lg hover:border-gold-500/70 transition-all duration-500 hover:-translate-y-2 premium-shadow animate-fade-in-up" style={{ animationDelay: '150ms' }}>
             <div className="flex items-center gap-4 mb-6">
               <MapPin size={32} className="text-gold-500" />
               <h3 className="text-2xl font-serif font-bold text-white">Location</h3>
             </div>
-            <p className="text-slate-300 text-lg mb-2">Quezon City, Philippines</p>
+            <p className="text-slate-300 text-lg mb-2">103 K6th St Kamuning Quezon City</p>
             <p className="text-slate-400">Serving Metro Manila and surrounding areas</p>
           </div>
-
           <div className="bg-navy-900 border border-navy-700 p-8 rounded-lg hover:border-gold-500/70 transition-all duration-500 hover:-translate-y-2 premium-shadow animate-fade-in-up" style={{ animationDelay: '300ms' }}>
             <div className="flex items-center gap-4 mb-6">
               <Mail size={32} className="text-gold-500" />
               <h3 className="text-2xl font-serif font-bold text-white">Email</h3>
             </div>
-            <p className="text-slate-300 text-lg mb-2">info@mazservices.com</p>
+            <p className="text-slate-300 text-lg mb-2">mazplumbelectricalservices@gmail.com</p>
             <p className="text-slate-400">Response within 2 hours</p>
           </div>
         </div>
-
         {/* Contact Form */}
         <div className="max-w-2xl mx-auto animate-fade-in-up">
           <form onSubmit={handleSubmit} className="bg-navy-900 border border-navy-700 p-12 rounded-lg premium-shadow">
@@ -100,7 +95,6 @@ export default function Contact() {
                 />
               </div>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label className="block text-white font-semibold mb-3">Phone</label>
@@ -109,7 +103,7 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+63 912 345 6789"
+                  placeholder="+63 995 159 0071"
                   className="w-full bg-navy-800 border border-navy-700 rounded px-4 py-3 text-white placeholder:text-slate-500 focus:border-gold-500 focus:outline-none transition-colors"
                 />
               </div>
@@ -130,7 +124,6 @@ export default function Contact() {
                 </select>
               </div>
             </div>
-
             <div className="mb-8">
               <label className="block text-white font-semibold mb-3">Message</label>
               <textarea
@@ -143,14 +136,12 @@ export default function Contact() {
                 required
               ></textarea>
             </div>
-
             <button
               type="submit"
               className="w-full gold-gradient text-navy-900 py-4 font-bold uppercase tracking-widest flex items-center justify-center gap-2 hover:from-gold-600 hover:to-gold-500 transition-all duration-300 premium-shadow animate-pulse-glow rounded"
             >
               <Send size={20} /> Send Message
             </button>
-
             {submitted && (
               <p className="text-center text-gold-400 mt-6 font-semibold animate-fade-in">
                 ✓ Thank you! We'll be in touch within 2 hours.
