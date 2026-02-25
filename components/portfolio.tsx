@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import { ChevronRight } from 'lucide-react'
 
@@ -8,28 +7,28 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: 'Luxury Estate Renovation',
-      category: 'Plumbing & Electrical',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop',
-      description: 'Complete modernization of a historic estate with integrated smart systems',
+      title: 'Modern Wooden Slat TV Feature Wall',
+      category: 'Entertainment Unit & LED Design',
+      image: 'https://images.squarespace-cdn.com/content/v1/6854409c4933b941d0697a92/3020a0d6-667e-458e-bc6b-0e33edf0576b/01.jpeg',
+      description: 'Custom wood slat accent wall with integrated warm LED backlighting, floating console, and built-in shelving for a sleek, modern living room focal point.',
     },
     {
-      title: 'Smart Home Integration',
-      category: 'Electrical Excellence',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000&auto=format&fit=crop',
-      description: 'Advanced automation and energy-efficient electrical infrastructure',
+      title: 'Premium Kitchen Storage Cabinetry',
+      category: 'Custom Cabinetry & Joinery',
+      image: 'http://www.cabinetswarehouse.com/wp-content/uploads/2025/01/Image_20231211162508-scaled.jpg',
+      description: 'High-gloss white tall cabinet with glass sliding doors and internal shelving, designed for maximum storage and a clean, contemporary kitchen look.',
     },
     {
-      title: 'Commercial Complex',
-      category: 'Plumbing Mastery',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop',
-      description: 'Large-scale commercial plumbing and electrical systems installation',
+      title: 'Water Pump & Pressure Tank Installation',
+      category: 'Plumbing & Utility Systems',
+      image: 'https://static.homeguide.com/assets/images/content/homeguide-cost-to-replace-well-pressure-tank-basement-water-supply-tank.jpg',
+      description: 'Professional setup of pressure tank, booster pump, and piping system in utility area for reliable water supply and pressure management.',
     },
     {
-      title: 'Residential Upgrade',
-      category: 'Maintenance & Repair',
-      image: 'https://images.unsplash.com/photo-1519915212117-8c52f6b6c3a4?q=80&w=2000&auto=format&fit=crop',
-      description: 'Comprehensive home upgrade with premium fixtures and modern wiring',
+      title: 'Commercial Kiosk Fit-Out',
+      category: 'Retail & Commercial Interiors',
+      image: 'https://rockabitebaby.com/wp-content/uploads/2013/09/20130908_144027.jpg',
+      description: 'Complete build and installation of modern frozen yogurt outlet counter with branded signage, lighting, and queue management system.',
     },
   ]
 
@@ -42,7 +41,6 @@ export default function Portfolio() {
           </h2>
           <div className="w-32 h-1 gold-gradient mx-auto"></div>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
@@ -54,13 +52,12 @@ export default function Portfolio() {
             >
               <div className="relative h-80 overflow-hidden">
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-900/90 via-navy-900/40 to-transparent"></div>
               </div>
-
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                 <span className="text-gold-400 text-sm uppercase tracking-widest font-semibold mb-2">
                   {project.category}
