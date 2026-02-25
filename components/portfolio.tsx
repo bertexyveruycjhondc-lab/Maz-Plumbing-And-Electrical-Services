@@ -1,3 +1,4 @@
+```tsx
 'use client'
 import { useState, useEffect } from 'react'
 
@@ -52,7 +53,7 @@ export default function Portfolio() {
               <img
                 src={src}
                 alt={`Project ${index + 1}`}
-                className={`w-full h-full object-contain transition-transform duration-700 ${
+                className={`w-full h-full object-cover transition-transform duration-700 ${
                   index === currentIndex && isHovered 
                     ? 'scale-110' 
                     : 'scale-100'
@@ -88,3 +89,4 @@ export default function Portfolio() {
     </section>
   )
 }
+```
