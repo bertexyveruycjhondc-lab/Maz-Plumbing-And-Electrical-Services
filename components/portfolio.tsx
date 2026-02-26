@@ -38,7 +38,7 @@ export default function Portfolio() {
 
         {/* Slideshow */}
         <div
-          className="relative w-full max-w-6xl mx-auto aspect-video bg-black rounded-2xl shadow-2xl overflow-hidden"
+          className="relative w-full max-w-6xl mx-auto aspect-video bg-transparent rounded-2xl shadow-2xl overflow-hidden"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
