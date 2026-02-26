@@ -71,20 +71,6 @@ desc: 'Professional floor tile installation and repair, ensuring smooth, durable
 icon: Wrench,
       image: '/services/floor-tile experting.jpg',
     },
-    {
-      title: 'Illumination Mastery',
-      desc: 'Bespoke lighting design, architectural installations, and intelligent dimming systems that sculpt atmosphere with precision.',
-      icon: Lightbulb,
-      image:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop',
-    },
-    {
-      title: 'Automation Excellence',
-      desc: 'Seamless smart home ecosystems integrating lighting, climate, security, and entertainment into one effortless experience.',
-      icon: Cpu,
-      image:
-        'https://images.unsplash.com/photo-1558618047-3c8c76a0d7e1?q=80&w=2000&auto=format&fit=crop',
-    },
   ]
 
   return (
