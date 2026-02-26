@@ -1,89 +1,82 @@
 'use client'
-
-import { useState } from 'react'
-import { ChevronRight } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 export default function Portfolio() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
 
-  const projects = [
-    {
-      title: 'Luxury Estate Renovation',
-      category: 'Plumbing & Electrical',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop',
-      description: 'Complete modernization of a historic estate with integrated smart systems',
-    },
-    {
-      title: 'Smart Home Integration',
-      category: 'Electrical Excellence',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000&auto=format&fit=crop',
-      description: 'Advanced automation and energy-efficient electrical infrastructure',
-    },
-    {
-      title: 'Commercial Complex',
-      category: 'Plumbing Mastery',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop',
-      description: 'Large-scale commercial plumbing and electrical systems installation',
-    },
-    {
-      title: 'Residential Upgrade',
-      category: 'Maintenance & Repair',
-      image: 'https://images.unsplash.com/photo-1519915212117-8c52f6b6c3a4?q=80&w=2000&auto=format&fit=crop',
-      description: 'Comprehensive home upgrade with premium fixtures and modern wiring',
-    },
+  const images = [
+    '/images/tv-wall.jpg',
+    '/images/cabinet-assembly.jpg',
+    '/images/water-system.jpg',
+    '/images/yogurt-kiosk.jpg',
+    '/images/drain-unclogging.jpg',
+    '/images/warehouse-ceiling.jpg',
+    '/images/kitchen-pantry.jpg',
+    '/images/exterior-scaffolding.jpg'
   ]
+
+  useEffect(() => {
+    if (isHovered) return
+
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length)
+    }, 3000)
+
+    return () => clearInterval(timer)
+  }, [isHovered])
 
   return (
     <section id="portfolio" className="py-32 bg-navy-800">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-20 animate-fade-in-up">
-          <h2 className="text-5xl md:text-6xl font-serif font-bold text-white mb-6 text-balance">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-serif font-bold text-white mb-6">
             Our Finest Works
           </h2>
           <div className="w-32 h-1 gold-gradient mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <div
+        {/* Slideshow */}
+        <div
+          className="relative w-full max-w-6xl mx-auto aspect-video bg-black rounded-2xl shadow-2xl overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {images.map((src, index) => (
+            <img
               key={index}
-              className="group relative overflow-hidden rounded-lg animate-fade-in-up"
-              style={{ animationDelay: `${index * 150}ms` }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div className="relative h-80 overflow-hidden">
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-900/90 via-navy-900/40 to-transparent"></div>
-              </div>
-
-              <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                <span className="text-gold-400 text-sm uppercase tracking-widest font-semibold mb-2">
-                  {project.category}
-                </span>
-                <h3 className="text-3xl font-serif font-bold mb-3 group-hover:text-gold-400 transition-colors">
-                  {project.title}
-                </h3>
-                <p
-                  className={`text-slate-200 mb-4 transition-all duration-300 ${
-                    hoveredIndex === index ? 'opacity-100 h-auto' : 'opacity-0 h-0'
-                  }`}
-                >
-                  {project.description}
-                </p>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 transition-colors group-hover:translate-x-2 duration-300"
-                >
-                  View Details <ChevronRight size={20} />
-                </a>
-              </div>
-            </div>
+              src={src}
+              alt={`Project ${index + 1}`}
+              className={`
+                absolute inset-0
+                w-full 
+                h-full
+                object-contain
+                transition-opacity duration-1000 ease-in-out
+                ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}
+              `}
+            />
           ))}
+
+          {/* Dots */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? 'bg-gold-400 scale-125'
+                    : 'bg-white/50 hover:bg-white'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Counter */}
+          <div className="absolute top-6 right-6 bg-black/60 text-white text-sm px-4 py-1.5 rounded-full font-mono">
+            {String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+          </div>
         </div>
       </div>
     </section>
