@@ -12,7 +12,6 @@ import {
   Droplet,
   Lightbulb,
   Cpu,
-  Wrench,
 } from 'lucide-react'
 
 export default function Services() {
