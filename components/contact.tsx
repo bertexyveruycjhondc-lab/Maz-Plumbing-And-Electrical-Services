@@ -37,18 +37,17 @@ export default function Contact() {
     setError('')
 
     try {
-      await emailjs.send(
-        'service_t7ccdum', // Your Service ID
-        'template_s4ra6la', // Your Template ID
-        {
-          to_email: 'berte.xyveruycjhon.dc@ssct.edu.ph',
-          Name: formData.name,
-          Email: formData.email,
-          Phone: formData.phone || 'Not provided',
-          Service: formData.subject,
-          Message: formData.message,
-        }
-      )
+     await emailjs.send(
+  'service_t7ccdum',
+  'template_s4ra6la',
+  {
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone || 'Not provided',
+    subject: formData.subject,
+    message: formData.message,
+  }
+)
 
       setSubmitted(true)
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
