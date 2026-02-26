@@ -1,5 +1,6 @@
 'use client'
-import React, { useState } from "react"
+
+import React, { useState, useEffect } from 'react'
 import { Phone, MapPin, Mail, Send } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 
@@ -13,115 +14,141 @@ export default function Contact() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  // Initialize EmailJS once when component mounts
+  useEffect(() => {
+    emailjs.init('XxcfrDVc4AbcpRK6O') // Your public key
+  }, [])
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+    setError('') // Clear error when user starts typing
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError('')
 
     try {
       await emailjs.send(
-        'service_z9n7swg',        // ← REPLACE with your Service ID
-        'template_s4ra6la',       // ← REPLACE with your Template ID
+        'service_z9n7swg', // Your Service ID
+        'template_s4ra6la', // Your Template ID
         {
-          name: formData.name,
-          email: formData.email,
+          to_email: 'berte.xyveruycjhon.dc@ssct.edu.ph',
+          from_name: formData.name,
+          from_email: formData.email,
           phone: formData.phone || 'Not provided',
           subject: formData.subject,
           message: formData.message,
-        },
-        'XxcfrDVc4AbcpRK6O'             // ← REPLACE with your Public Key
+        }
       )
 
       setSubmitted(true)
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
 
-      // Reset form after 5 seconds
+      // Reset success message after 5 seconds
       setTimeout(() => {
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
         setSubmitted(false)
       }, 5000)
-
     } catch (error) {
       console.error('EmailJS error:', error)
-      alert('Failed to send message. Please try again or call us directly.')
+      setError(
+        'Failed to send message. Please check your credentials or try again.'
+      )
     } finally {
       setIsSubmitting(false)
     }
   }
 
   return (
-    <section id="contact" className="py-32 bg-navy-800">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-20 animate-fade-in-up">
-          <h2 className="text-5xl md:text-6xl font-serif font-bold text-white mb-6 text-balance">
-            Begin Your Journey to Excellence
+    <section id="contact" className="py-32 bg-slate-900">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Get in Touch
           </h2>
-          <div className="w-32 h-1 gold-gradient mx-auto"></div>
+          <p className="text-slate-400 text-lg">
+            We're here to help. Send us a message and we'll respond as soon as
+            possible.
+          </p>
         </div>
 
-        {/* Contact Info Cards - unchanged */}
+        {/* Contact Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
-          {/* ... your three cards (Phone, Location, Email) stay exactly the same ... */}
-          {/* I kept them identical so you can just copy-paste the whole file */}
-          <div className="bg-navy-900 border border-navy-700 p-8 rounded-lg hover:border-gold-500/70 transition-all duration-500 hover:-translate-y-2 premium-shadow animate-fade-in-up">
+          <div className="bg-slate-800 border border-slate-700 p-8 rounded-lg hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-2">
             <div className="flex items-center gap-4 mb-6">
-              <Phone size={32} className="text-gold-500" />
-              <h3 className="text-2xl font-serif font-bold text-white">Call Us</h3>
+              <Phone size={32} className="text-blue-500" />
+              <h3 className="text-2xl font-bold text-white">Call Us</h3>
             </div>
             <p className="text-slate-300 text-lg mb-2">+63 995 159 0071</p>
             <p className="text-slate-300 text-lg mb-2">+63 917 771 1211</p>
             <p className="text-slate-400">Available 24/7 for emergencies</p>
           </div>
 
-          <div className="bg-navy-900 border border-navy-700 p-8 rounded-lg hover:border-gold-500/70 transition-all duration-500 hover:-translate-y-2 premium-shadow animate-fade-in-up" style={{ animationDelay: '150ms' }}>
+          <div className="bg-slate-800 border border-slate-700 p-8 rounded-lg hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-2">
             <div className="flex items-center gap-4 mb-6">
-              <MapPin size={32} className="text-gold-500" />
-              <h3 className="text-2xl font-serif font-bold text-white">Location</h3>
+              <MapPin size={32} className="text-blue-500" />
+              <h3 className="text-2xl font-bold text-white">Location</h3>
             </div>
-            <p className="text-slate-300 text-lg mb-2">103 K6th St Kamuning Quezon City</p>
-            <p className="text-slate-400">Serving Metro Manila and surrounding areas</p>
+            <p className="text-slate-300 text-lg mb-2">
+              103 K6th St Kamuning Quezon City
+            </p>
+            <p className="text-slate-400">
+              Serving Metro Manila and surrounding areas
+            </p>
           </div>
 
-          <div className="bg-navy-900 border border-navy-700 p-8 rounded-lg hover:border-gold-500/70 transition-all duration-500 hover:-translate-y-2 premium-shadow animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+          <div className="bg-slate-800 border border-slate-700 p-8 rounded-lg hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-2">
             <div className="flex items-center gap-4 mb-6">
-              <Mail size={32} className="text-gold-500" />
-              <h3 className="text-2xl font-serif font-bold text-white">Email</h3>
+              <Mail size={32} className="text-blue-500" />
+              <h3 className="text-2xl font-bold text-white">Email</h3>
             </div>
-            <p className="text-slate-300 text-lg mb-2">mazplumbelectricalservices@gmail.com</p>
+            <p className="text-slate-300 text-lg mb-2">
+              mazplumbelectricalservices@gmail.com
+            </p>
             <p className="text-slate-400">Response within 2 hours</p>
           </div>
         </div>
 
-        {/* Contact Form - NOW FULLY WORKING */}
-        <div className="max-w-2xl mx-auto animate-fade-in-up">
-          <form onSubmit={handleSubmit} className="bg-navy-900 border border-navy-700 p-12 rounded-lg premium-shadow">
-            {/* All your form fields stay exactly the same */}
+        {/* Contact Form */}
+        <div className="max-w-2xl mx-auto">
+          <form
+            onSubmit={handleSubmit}
+            className="bg-slate-800 border border-slate-700 p-12 rounded-lg"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-white font-semibold mb-3">Full Name</label>
+                <label className="block text-white font-semibold mb-3">
+                  Full Name
+                </label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name"
-                  className="w-full bg-navy-800 border border-navy-700 rounded px-4 py-3 text-white placeholder:text-slate-500 focus:border-gold-500 focus:outline-none transition-colors"
+                  className="w-full bg-slate-700 border border-slate-600 rounded px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none transition-colors"
                   required
                 />
               </div>
               <div>
-                <label className="block text-white font-semibold mb-3">Email</label>
+                <label className="block text-white font-semibold mb-3">
+                  Email
+                </label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your@email.com"
-                  className="w-full bg-navy-800 border border-navy-700 rounded px-4 py-3 text-white placeholder:text-slate-500 focus:border-gold-500 focus:outline-none transition-colors"
+                  className="w-full bg-slate-700 border border-slate-600 rounded px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none transition-colors"
                   required
                 />
               </div>
@@ -129,23 +156,27 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-white font-semibold mb-3">Phone</label>
+                <label className="block text-white font-semibold mb-3">
+                  Phone
+                </label>
                 <input
                   type="tel"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+63 995 159 0071"
-                  className="w-full bg-navy-800 border border-navy-700 rounded px-4 py-3 text-white placeholder:text-slate-500 focus:border-gold-500 focus:outline-none transition-colors"
+                  className="w-full bg-slate-700 border border-slate-600 rounded px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none transition-colors"
                 />
               </div>
               <div>
-                <label className="block text-white font-semibold mb-3">Subject</label>
+                <label className="block text-white font-semibold mb-3">
+                  Subject
+                </label>
                 <select
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full bg-navy-800 border border-navy-700 rounded px-4 py-3 text-white focus:border-gold-500 focus:outline-none transition-colors"
+                  className="w-full bg-slate-700 border border-slate-600 rounded px-4 py-3 text-white focus:border-blue-500 focus:outline-none transition-colors"
                   required
                 >
                   <option value="">Select a service</option>
@@ -158,33 +189,46 @@ export default function Contact() {
             </div>
 
             <div className="mb-8">
-              <label className="block text-white font-semibold mb-3">Message</label>
+              <label className="block text-white font-semibold mb-3">
+                Message
+              </label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Tell us about your project or concern..."
                 rows={6}
-                className="w-full bg-navy-800 border border-navy-700 rounded px-4 py-3 text-white placeholder:text-slate-500 focus:border-gold-500 focus:outline-none transition-colors resize-none"
+                className="w-full bg-slate-700 border border-slate-600 rounded px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none transition-colors resize-none"
                 required
               ></textarea>
             </div>
 
+            {error && (
+              <div className="mb-6 p-4 bg-red-900/20 border border-red-700 rounded text-red-400">
+                {error}
+              </div>
+            )}
+
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full gold-gradient text-navy-900 py-4 font-bold uppercase tracking-widest flex items-center justify-center gap-2 hover:from-gold-600 hover:to-gold-500 transition-all duration-300 premium-shadow animate-pulse-glow rounded disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-300 rounded disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
-                <>Sending<span className="animate-pulse">...</span></>
+                <>
+                  Sending
+                  <span className="animate-pulse">...</span>
+                </>
               ) : (
-                <><Send size={20} /> Send Message</>
+                <>
+                  <Send size={20} /> Send Message
+                </>
               )}
             </button>
 
             {submitted && (
-              <p className="text-center text-gold-400 mt-6 font-semibold animate-fade-in">
-                ✓ Thank you! We'll be in touch within 2 hours.
+              <p className="text-center text-green-400 mt-6 font-semibold">
+                ✓ Thank you! We&apos;ll be in touch within 2 hours.
               </p>
             )}
           </form>
