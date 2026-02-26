@@ -65,11 +65,10 @@ icon: PaintBucket,
       image: '/services/floor.jpg',
     },
     {
-      title: 'Filtration Mastery',
-      desc: 'State-of-the-art water purification and softening systems delivering crystal-clear, health-optimized water throughout your home.',
-      icon: Droplet,
-      image:
-        'https://images.unsplash.com/photo-1583947581924-860f6d63e8e7?q=80&w=2000&auto=format&fit=crop',
+      title: 'Floor Tile Expert',
+desc: 'Professional floor tile installation and repair, ensuring smooth, durable, and visually appealing flooring for any residential or commercial space.',
+icon: Wrench,
+      image: 'image: '/services/floor.jpg',
     },
     {
       title: 'Illumination Mastery',
