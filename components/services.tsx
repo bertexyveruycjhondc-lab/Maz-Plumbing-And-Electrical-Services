@@ -59,7 +59,7 @@ icon: PaintBucket,
       image: '/services/paint.jpg',
     },
     {
-      title: 'Flooring Installation Expertise',
+      title: 'Painting Expertise',
       desc: 'Exquisite flooring options, professional laying, and durable surfaces for sophisticated and resilient foundations.',
       icon: Layers,
       image: '/services/floor.jpg',
