@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
+  reactStrictMode: true,
+  swcMinify: true,
+
+  // Helps with faster rebuilds & caching behavior
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
   },
-  images: {
-    unoptimized: true,
-  },
+
+  // Optional: disable aggressive caching during development
+  generateEtags: false,
 }
 
 export default nextConfig
