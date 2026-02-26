@@ -42,11 +42,11 @@ export default function Contact() {
         'template_s4ra6la', // Your Template ID
         {
           to_email: 'berte.xyveruycjhon.dc@ssct.edu.ph',
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone || 'Not provided',
-          subject: formData.subject,
-          message: formData.message,
+          Name: formData.name,
+          Email: formData.email,
+          Phone: formData.phone || 'Not provided',
+          Service: formData.subject,
+          Message: formData.message,
         }
       )
 
