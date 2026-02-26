@@ -53,9 +53,9 @@ export default function Services() {
       image: '/services/roof.jpg',
     },
     {
-      title: 'Waterproofing & Painting Mastery',
-      desc: 'Superior waterproofing techniques, premium paints, and flawless finishes for enduring beauty and protection.',
-      icon: PaintBucket,
+     title: 'Water Pump Installation',
+desc: 'Professional water pump installation for consistent water pressure, energy-efficient operation, and long-lasting performance tailored to your property’s needs.',
+icon: PaintBucket,
       image: '/services/paint.jpg',
     },
     {
