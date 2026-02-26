@@ -38,7 +38,7 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        'service_z9n7swg', // Your Service ID
+        'service_t7ccdum', // Your Service ID
         'template_s4ra6la', // Your Template ID
         {
           to_email: 'berte.xyveruycjhon.dc@ssct.edu.ph',
