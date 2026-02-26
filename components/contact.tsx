@@ -34,7 +34,7 @@ export default function Contact() {
           subject: formData.subject,
           message: formData.message,
         },
-        'xxxxxxxxxxxxxx'             // ← REPLACE with your Public Key
+        'XxcfrDVc4AbcpRK6O'             // ← REPLACE with your Public Key
       )
 
       setSubmitted(true)
