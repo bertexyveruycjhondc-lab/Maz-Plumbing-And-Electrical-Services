@@ -55,9 +55,9 @@ export default function Services() {
     },
     {
      title: 'Water Pump Installation',
-desc: 'Professional water pump installation for consistent water pressure, energy-efficient operation, and long-lasting performance tailored to your property’s needs.',
-icon: PaintBucket,
-      image: '/services/paint.jpg',
+     desc: 'Professional water pump installation for consistent water pressure, energy-efficient operation, and long-lasting performance tailored to your property’s needs.',
+     icon: PaintBucket,
+     image: '/services/paint.jpg',
     },
     {
       title: 'Painting Expertise',
