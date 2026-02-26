@@ -12,6 +12,7 @@ import {
   Droplet,
   Lightbulb,
   Cpu,
+  Wrench,
 } from 'lucide-react'
 
 export default function Services() {
@@ -68,7 +69,7 @@ icon: PaintBucket,
       title: 'Floor Tile Expert',
 desc: 'Professional floor tile installation and repair, ensuring smooth, durable, and visually appealing flooring for any residential or commercial space.',
 icon: Wrench,
-      image: 'image: '/services/floor.jpg',
+      image: '/services/floor-tile experting.jpg',
     },
     {
       title: 'Illumination Mastery',
