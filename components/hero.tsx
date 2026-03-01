@@ -47,30 +47,20 @@ export default function Hero() {
           >
             Request a Consultation
           </a>
-          {isMobile ? (
-            <a
-              href="tel:+639177711211"
-              className="px-10 py-5 border border-white/20 text-white font-medium uppercase tracking-widest hover:border-gold-400 hover:text-gold-400 transition-all duration-500 backdrop-blur-md flex items-center gap-2 shadow-md animate-pulse-glow"
-            >
-              <Phone size={20} /> Call Now
-            </a>
-          ) : (
-            <button
-              onClick={handleCallClick}
-              className="px-10 py-5 border border-white/20 text-white font-medium uppercase tracking-widest hover:border-gold-400 hover:text-gold-400 transition-all duration-500 backdrop-blur-md flex items-center gap-2 shadow-md animate-pulse-glow"
-            >
-              <Phone size={20} /> Call Now
-            </button>
-          )}
+          <button
+            onClick={handleCallClick}
+            className="px-10 py-5 border border-white/20 text-white font-medium uppercase tracking-widest hover:border-gold-400 hover:text-gold-400 transition-all duration-500 backdrop-blur-md flex items-center gap-2 shadow-md animate-pulse-glow"
+          >
+            <Phone size={20} /> Call Now
+          </button>
         </div>
       </div>
-
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300">
           <div className="bg-navy-900 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 border border-gold-500/30 transform scale-95 animate-modal-pop gold-gradient-bg relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-navy-900/50 opacity-50"></div>
-            <button 
-              onClick={() => setShowModal(false)} 
+            <button
+              onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 text-gold-300 hover:text-gold-500 transition-colors"
             >
               <X size={24} />
