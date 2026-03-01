@@ -66,23 +66,30 @@ export default function Hero() {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="bg-navy-800 p-8 rounded-xl shadow-2xl max-w-sm w-full mx-4 border border-navy-700">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-white text-xl font-serif font-bold">Contact Us</h3>
-              <button onClick={() => setShowModal(false)} className="text-slate-400 hover:text-white">
-                <X size={20} />
-              </button>
-            </div>
-            <p className="text-slate-300 mb-4">Call us for service at one of these numbers:</p>
-            <ul className="space-y-3">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300">
+          <div className="bg-navy-900 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 border border-gold-500/30 transform scale-95 animate-modal-pop gold-gradient-bg relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-navy-900/50 opacity-50"></div>
+            <button 
+              onClick={() => setShowModal(false)} 
+              className="absolute top-4 right-4 text-gold-300 hover:text-gold-500 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            <h3 className="text-gold-400 text-2xl font-serif font-bold mb-6 relative z-10">
+              Get in Touch Now!
+            </h3>
+            <p className="text-slate-200 mb-6 relative z-10 font-light">
+              Our experts are ready to assist you. Call us for premium plumbing and electrical services.
+            </p>
+            <ul className="space-y-4 relative z-10">
               {phoneNumbers.map((number, index) => (
                 <li key={index}>
                   <a
                     href={`tel:+63${number.slice(1)}`}
-                    className="text-gold-400 hover:text-gold-500 transition-colors block"
+                    className="flex items-center gap-3 px-6 py-3 bg-navy-800/50 border border-gold-400/20 rounded-lg text-gold-300 hover:bg-gold-900/20 hover:text-gold-400 transition-all duration-300 shadow-md hover:shadow-lg"
                   >
-                    {number}
+                    <Phone size={20} className="text-gold-500" />
+                    <span className="font-medium">{number}</span>
                   </a>
                 </li>
               ))}
