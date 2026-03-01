@@ -25,22 +25,47 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a href="#services" className="text-slate-400 hover:text-gold-400 transition-colors">
-                  Hydraulic Mastery
+                  Home & Store Renovation Mastery
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-slate-400 hover:text-gold-400 transition-colors">
-                  Electrical Excellence
+                  Modular Cabinets Excellence
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-slate-400 hover:text-gold-400 transition-colors">
-                  Elite Maintenance
+                  Electrical Wiring Expertise
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-slate-400 hover:text-gold-400 transition-colors">
-                  Emergency Response
+                  Plumbing Services Mastery
+                </a>
+              </li>
+               <li>
+                <a href="#services" className="text-slate-400 hover:text-gold-400 transition-colors">
+                 Kitchen Modular Expert
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="text-slate-400 hover:text-gold-400 transition-colors">
+                  Roof Renovation Excellence
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="text-slate-400 hover:text-gold-400 transition-colors">
+                  Water Pump Installation
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="text-slate-400 hover:text-gold-400 transition-colors">
+                  Painting Expertise
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="text-slate-400 hover:text-gold-400 transition-colors">
+                  Floor Tile Expert
                 </a>
               </li>
             </ul>
