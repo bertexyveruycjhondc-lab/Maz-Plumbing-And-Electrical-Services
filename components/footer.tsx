@@ -9,10 +9,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <a href="#home" className="text-3xl font-serif font-bold text-white flex items-center gap-2 mb-6">
-              <span className="text-gold-600 text-4xl">✦</span> Maz Elite
+              <span className="text-gold-600 text-4xl">✦</span> Maz Plumbing and Electrical Service
             </a>
             <p className="text-slate-400 leading-relaxed">
-              Elevating home maintenance to an art form with unparalleled plumbing and electrical mastery.
+              Transforming homes with expert plumbing, electrical wizardry, and renovation brilliance – where quality meets reliability!
             </p>
           </div>
           {/* Services */}
@@ -97,13 +97,13 @@ export default function Footer() {
             <h4 className="text-white font-serif font-bold text-lg mb-6">Connect With Us</h4>
             <div className="flex gap-4">
               <a
-                href="https://www.facebook.com/Malcolm2916/"
+                href="#"
                 className="w-12 h-12 bg-navy-800 border border-navy-700 rounded-full flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="mailto:mazplumbelectricalservices@gmail.com?subject=Inquiry&body=Hello Maz Elite"
+                href="#"
                 className="w-12 h-12 bg-navy-800 border border-navy-700 rounded-full flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
               >
                 <Mail size={20} />
@@ -115,7 +115,7 @@ export default function Footer() {
         <div className="border-t border-navy-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-slate-500 text-sm">
-              © {currentYear} Maz Plumbing & Electrical. All rights reserved.
+              © {currentYear} Maz Plumbing and Electrical Service. All rights reserved.
             </p>
             <div className="flex gap-8">
               <a href="#" className="text-slate-500 hover:text-gold-400 text-sm transition-colors">
