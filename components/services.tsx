@@ -4,7 +4,6 @@ import {
   Home,
   Box,
   Zap,
-  Wrench,
   Utensils,
   Hammer,
   PaintBucket,
