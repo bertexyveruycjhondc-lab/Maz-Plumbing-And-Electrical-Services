@@ -8,10 +8,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <a href="#home" className="flex items-center gap-2 mb-6">
+           <a href="#home" className="flex items-center gap-2 mb-6">
   <img
-    src="/logo.png"
-    alt="Maz Plumbing and Electrical Service Logo"
+    src="/logo.jpg"
+    span className="text-gold-600 text-4xl">✦</span> Maz Plumbing and Electrical Service
     className="h-12 w-auto" // Adjust height as needed
   />
 </a>
