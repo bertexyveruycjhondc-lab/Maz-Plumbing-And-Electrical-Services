@@ -4,6 +4,7 @@ import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, VariantProps } from 'class-variance-authority'
 import { PanelLeftIcon } from 'lucide-react'
+import { cva, VariantProps } from 'class-variance-authority'
 
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/utils'
@@ -140,6 +141,26 @@ function SidebarProvider({
     </SidebarContext.Provider>
   )
 }
+// Define your button variants
+const sidebarMenuButtonVariants = cva(
+  'flex items-center justify-center rounded-md p-2 transition-colors focus-visible:ring-2 outline-none',
+  {
+    variants: {
+      variant: {
+        default: 'bg-transparent hover:bg-sidebar-accent',
+        subtle: 'bg-gray-100 hover:bg-gray-200',
+      },
+      size: {
+        default: 'h-10 w-10',
+        sm: 'h-8 w-8',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
+    },
+  }
+)
 
 function Sidebar({
   side = 'left',
@@ -269,13 +290,19 @@ function SidebarTrigger({
 
 // ---------------------- FIXED COMPONENTS WITH ASCHILD + REFS ---------------------- //
 
+import * as React from 'react'
+import { Slot } from '@radix-ui/react-slot'
+import { cn } from '@/lib/utils'
+
+// ---------------------- SidebarGroupLabel ---------------------- //
+
 const SidebarGroupLabel = React.forwardRef<
   HTMLDivElement,
   Omit<React.ComponentProps<'div'>, 'ref'> & { asChild?: boolean }
 >(({ className, asChild = false, ...props }, ref) => {
   const Comp = asChild ? Slot : 'div'
 
-  // handleRef for Slot
+  // Only needed if using Slot
   const handleRef = (instance: HTMLElement | null) => {
     if (!ref) return
     if (typeof ref === 'function') ref(instance as HTMLDivElement)
@@ -284,7 +311,7 @@ const SidebarGroupLabel = React.forwardRef<
 
   return (
     <Comp
-      ref={asChild ? handleRef : (ref as React.Ref<HTMLDivElement>)}
+      ref={asChild ? handleRef : ref} // ✅ use handleRef only for Slot
       data-slot="sidebar-group-label"
       data-sidebar="group-label"
       className={cn('flex items-center gap-2 px-2 py-1', className)}
@@ -293,6 +320,9 @@ const SidebarGroupLabel = React.forwardRef<
   )
 })
 
+SidebarGroupLabel.displayName = 'SidebarGroupLabel'
+
+export { SidebarGroupLabel }
 // SidebarGroupAction
 const SidebarGroupAction = React.forwardRef<
   HTMLButtonElement,
