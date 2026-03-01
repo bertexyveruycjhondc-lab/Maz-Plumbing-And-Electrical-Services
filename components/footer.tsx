@@ -166,9 +166,13 @@ export default function Footer() {
             <h3 className="text-gold-400 text-2xl font-serif font-bold mb-6 relative z-10">
               Privacy Policy
             </h3>
-            <p className="text-slate-200 mb-6 relative z-10 font-light">
-              At Maz Plumbing and Electrical Service, we value your privacy. This policy outlines how we collect, use, and protect your personal information. [Add full privacy policy details here.]
-            </p>
+           <p className="text-slate-200 mb-6 relative z-10 font-light">
+  At Maz Plumbing and Electrical Service, your privacy is important to us. We collect only the information necessary to provide quality services, such as your name, email, phone number, and service request details.  
+  <br /><br />
+  We use this information solely to respond to inquiries, provide services, and improve our offerings. We do not sell, trade, or share your personal data with third parties for marketing purposes.  
+  <br /><br />
+  By using our website or services, you consent to our privacy practices outlined here. We also use cookies for analytics and site optimization, which you can manage via your browser settings.
+</p>
           </div>
         </div>
       )}
@@ -188,8 +192,18 @@ export default function Footer() {
               Terms of Service
             </h3>
             <p className="text-slate-200 mb-6 relative z-10 font-light">
-              By using our services, you agree to these terms. This includes our service agreements, payment terms, and liability limitations. [Add full terms of service details here.]
-            </p>
+  By using Maz Plumbing and Electrical Service, you agree to the following terms:  
+  <br /><br />
+  1. <strong>Service Scope:</strong> We provide plumbing, electrical, and home renovation services as requested. All service requests should be clear and agreed upon prior to work.  
+  <br />
+  2. <strong>Payment Terms:</strong> Payment is due as agreed in your service quote. Additional costs may apply for extra work or materials.  
+  <br />
+  3. <strong>Liability:</strong> We are not liable for indirect or incidental damages. We guarantee workmanship for the services provided, in accordance with industry standards.  
+  <br />
+  4. <strong>Cancellations:</strong> Cancellations must be made at least 24 hours before scheduled service to avoid charges.  
+  <br /><br />
+  By booking our services or using our website, you acknowledge and agree to these terms.
+</p>
           </div>
         </div>
       )}
