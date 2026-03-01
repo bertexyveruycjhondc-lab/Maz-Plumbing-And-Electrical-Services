@@ -269,17 +269,17 @@ function SidebarTrigger({
 
 // ---------------------- FIXED COMPONENTS WITH ASCHILD + REFS ---------------------- //
 
-// SidebarGroupLabel
 const SidebarGroupLabel = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<'div'> & { asChild?: boolean }
+  Omit<React.ComponentProps<'div'>, 'ref'> & { asChild?: boolean }
 >(({ className, asChild = false, ...props }, ref) => {
   const Comp = asChild ? Slot : 'div'
 
+  // handleRef for Slot
   const handleRef = (instance: HTMLElement | null) => {
     if (!ref) return
     if (typeof ref === 'function') ref(instance as HTMLDivElement)
-    else if ('current' in ref) (ref as React.MutableRefObject<HTMLDivElement | null>).current = instance as HTMLDivElement
+    else (ref as React.MutableRefObject<HTMLDivElement | null>).current = instance as HTMLDivElement
   }
 
   return (
