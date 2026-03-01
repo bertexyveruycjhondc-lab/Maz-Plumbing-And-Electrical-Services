@@ -5,7 +5,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [showModal, setShowModal] = useState(false)
+  const [showCallModal, setShowCallModal] = useState(false)
+  const [showOwnerModal, setShowOwnerModal] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -17,7 +18,12 @@ export default function Navbar() {
   const phoneNumbers = ['09951590071', '091777111211']
 
   const handleCallClick = () => {
-    setShowModal(true)
+    setShowCallModal(true)
+  }
+
+  const handleOwnerClick = () => {
+    setIsOpen(false)
+    setShowOwnerModal(true)
   }
 
   const navLinks = [
@@ -27,6 +33,7 @@ export default function Navbar() {
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
+    { name: 'Owner', href: '#', onClick: handleOwnerClick },
   ]
   const handleLinkClick = () => setIsOpen(false)
   return (
@@ -56,6 +63,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
+              onClick={link.onClick || (() => {})}
               className="text-sm uppercase tracking-widest text-slate-300 hover:text-gold-400 transition-colors duration-300"
             >
               {link.name}
@@ -81,7 +89,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={handleLinkClick}
+                onClick={link.onClick || handleLinkClick}
                 className="text-lg text-slate-300 hover:text-gold-400 transition-colors"
               >
                 {link.name}
@@ -102,12 +110,12 @@ export default function Navbar() {
           </div>
         </div>
       )}
-      {showModal && (
+      {showCallModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300">
           <div className="bg-navy-900 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 border border-gold-500/30 transform scale-95 animate-modal-pop gold-gradient-bg relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-navy-900/50 opacity-50"></div>
             <button 
-              onClick={() => setShowModal(false)} 
+              onClick={() => setShowCallModal(false)} 
               className="absolute top-4 right-4 text-gold-300 hover:text-gold-500 transition-colors"
             >
               <X size={24} />
@@ -131,6 +139,33 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      )}
+      {showOwnerModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300">
+          <div className="bg-navy-900 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 border border-gold-500/30 transform scale-95 animate-modal-pop gold-gradient-bg relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-navy-900/50 opacity-50"></div>
+            <button 
+              onClick={() => setShowOwnerModal(false)} 
+              className="absolute top-4 right-4 text-gold-300 hover:text-gold-500 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            <h3 className="text-gold-400 text-2xl font-serif font-bold mb-6 relative z-10">
+              Meet the Owner
+            </h3>
+            <div className="flex flex-col items-center relative z-10">
+              <img
+                src="/owner.jpg" // Replace with the actual path to the owner's image
+                alt="Mark Shy"
+                className="w-48 h-48 rounded-full object-cover mb-4 border-4 border-gold-500"
+              />
+              <h4 className="text-white text-xl font-bold mb-2">Mark Shy</h4>
+              <p className="text-slate-200 text-center font-light">
+                Proud owner of Maz Plumbing And Electrical Services, bringing years of expertise to every project.
+              </p>
+            </div>
           </div>
         </div>
       )}
