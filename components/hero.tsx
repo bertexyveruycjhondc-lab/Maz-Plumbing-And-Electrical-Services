@@ -1,8 +1,21 @@
 'use client'
-
-import { Phone } from 'lucide-react'
+import { Phone, X } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 export default function Hero() {
+  const [isMobile, setIsMobile] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(/Mobi|Android|iPad|iPhone/i.test(navigator.userAgent))
+  }, [])
+
+  const phoneNumbers = ['09951590071', '091777111211']
+
+  const handleCallClick = () => {
+    setShowModal(true)
+  }
+
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -34,14 +47,49 @@ export default function Hero() {
           >
             Request a Consultation
           </a>
-          <a
-            href="tel:+639123456789"
-            className="px-10 py-5 border border-white/20 text-white font-medium uppercase tracking-widest hover:border-gold-400 hover:text-gold-400 transition-all duration-500 backdrop-blur-md flex items-center gap-2 shadow-md animate-pulse-glow"
-          >
-            <Phone size={20} /> Call Now
-          </a>
+          {isMobile ? (
+            <a
+              href="tel:+639951590071"
+              className="px-10 py-5 border border-white/20 text-white font-medium uppercase tracking-widest hover:border-gold-400 hover:text-gold-400 transition-all duration-500 backdrop-blur-md flex items-center gap-2 shadow-md animate-pulse-glow"
+            >
+              <Phone size={20} /> Call Now
+            </a>
+          ) : (
+            <button
+              onClick={handleCallClick}
+              className="px-10 py-5 border border-white/20 text-white font-medium uppercase tracking-widest hover:border-gold-400 hover:text-gold-400 transition-all duration-500 backdrop-blur-md flex items-center gap-2 shadow-md animate-pulse-glow"
+            >
+              <Phone size={20} /> Call Now
+            </button>
+          )}
         </div>
       </div>
+
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+          <div className="bg-navy-800 p-8 rounded-xl shadow-2xl max-w-sm w-full mx-4 border border-navy-700">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-white text-xl font-serif font-bold">Contact Us</h3>
+              <button onClick={() => setShowModal(false)} className="text-slate-400 hover:text-white">
+                <X size={20} />
+              </button>
+            </div>
+            <p className="text-slate-300 mb-4">Call us for service at one of these numbers:</p>
+            <ul className="space-y-3">
+              {phoneNumbers.map((number, index) => (
+                <li key={index}>
+                  <a
+                    href={`tel:+63${number.slice(1)}`}
+                    className="text-gold-400 hover:text-gold-500 transition-colors block"
+                  >
+                    {number}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
