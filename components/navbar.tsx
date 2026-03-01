@@ -1,17 +1,24 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 import { Menu, X, Phone } from 'lucide-react'
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
+    setIsMobile(/Mobi|Android|iPad|iPhone/i.test(navigator.userAgent))
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const phoneNumbers = ['09951590071', '091777111211']
+
+  const handleCallClick = () => {
+    setShowModal(true)
+  }
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -21,9 +28,7 @@ export default function Navbar() {
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ]
-
   const handleLinkClick = () => setIsOpen(false)
-
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-500 ${
@@ -42,7 +47,6 @@ export default function Navbar() {
           />
           <span className="text-slate-300 text-xl font-bold tracking-wide">Maz Plumbing And Electrical Services</span>
         </a>
-
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
@@ -54,20 +58,18 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          <a
-            href="tel:+63-912-345-6789"
+          <button
+            onClick={handleCallClick}
             className="ml-6 px-8 py-3 gold-gradient text-navy-900 hover:from-gold-600 hover:to-gold-500 transition-all duration-300 text-sm uppercase tracking-widest font-semibold flex items-center gap-2 shadow-md cursor-pointer hover:scale-105"
           >
             <Phone size={20} /> Reserve Now
-          </a>
+          </button>
         </div>
-
         {/* Mobile Toggle */}
         <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
-
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-navy-800 border-b border-navy-700 animate-fade-in">
@@ -82,13 +84,50 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <a
-              href="tel:+63-912-345-6789"
-              onClick={handleLinkClick}
-              className="text-gold-500 font-bold text-lg mt-2 flex items-center gap-2 cursor-pointer hover:text-gold-400 transition-colors"
+            <div className="mt-2 space-y-2">
+              {phoneNumbers.map((number, index) => (
+                <a
+                  key={index}
+                  href={`tel:+63${number.slice(1)}`}
+                  onClick={handleLinkClick}
+                  className="text-gold-500 font-bold text-lg flex items-center gap-2 cursor-pointer hover:text-gold-400 transition-colors"
+                >
+                  <Phone size={20} /> Call: {number}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300">
+          <div className="bg-navy-900 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 border border-gold-500/30 transform scale-95 animate-modal-pop gold-gradient-bg relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-navy-900/50 opacity-50"></div>
+            <button 
+              onClick={() => setShowModal(false)} 
+              className="absolute top-4 right-4 text-gold-300 hover:text-gold-500 transition-colors"
             >
-              <Phone size={20} /> Call: +63 912 345 6789
-            </a>
+              <X size={24} />
+            </button>
+            <h3 className="text-gold-400 text-2xl font-serif font-bold mb-6 relative z-10">
+              Get in Touch Now!
+            </h3>
+            <p className="text-slate-200 mb-6 relative z-10 font-light">
+              Our experts are ready to assist you. Call us for premium plumbing and electrical services.
+            </p>
+            <ul className="space-y-4 relative z-10">
+              {phoneNumbers.map((number, index) => (
+                <li key={index}>
+                  <a
+                    href={`tel:+63${number.slice(1)}`}
+                    className="flex items-center gap-3 px-6 py-3 bg-navy-800/50 border border-gold-400/20 rounded-lg text-gold-300 hover:bg-gold-900/20 hover:text-gold-400 transition-all duration-300 shadow-md hover:shadow-lg"
+                  >
+                    <Phone size={20} className="text-gold-500" />
+                    <span className="font-medium">{number}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       )}
