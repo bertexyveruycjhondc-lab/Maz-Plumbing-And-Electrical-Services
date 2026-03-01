@@ -11,7 +11,7 @@ export default function Footer() {
            <a href="#home" className="flex items-center gap-2 mb-6">
   <img
     src="/logo.jpg"
-    span className="text-gold-600 text-4xl">✦</span> Maz Plumbing and Electrical Service
+    alt="Maz Plumbing and Electrical Service Logo"
     className="h-12 w-auto" // Adjust height as needed
   />
 </a>
