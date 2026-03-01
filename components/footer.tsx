@@ -8,12 +8,23 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <a href="#home" className="text-3xl font-serif font-bold text-gold-500 flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-navy-800 border border-navy-700 rounded-full flex items-center justify-center">
-                <span className="text-gold-600 text-4xl">✦</span>
-              </div>
-              Maz Plumbing and Electrical Service
-            </a>
+           <a
+  href="#home"
+  className="text-3xl font-serif font-bold text-gold-500 flex items-center gap-4 mb-6"
+>
+  {/* Logo Placeholder */}
+  <div className="w-12 h-12 bg-navy-800 border border-navy-700 rounded-full flex items-center justify-center overflow-hidden">
+    {/* Replace the span with an image placeholder */}
+    <img
+      src="/logo.jpg" // put your actual logo here
+      alt="Company Logo"
+      className="w-full h-full object-contain"
+    />
+  </div>
+  
+  {/* Company Name */}
+  <span>Maz Plumbing and Electrical Service</span>
+</a>
             <p className="text-slate-400 leading-relaxed">
               Transforming homes with expert plumbing, electrical wizardry, and renovation brilliance – where quality meets reliability!
             </p>
