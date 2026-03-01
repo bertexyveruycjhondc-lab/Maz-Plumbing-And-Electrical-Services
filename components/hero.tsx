@@ -49,7 +49,7 @@ export default function Hero() {
           </a>
           {isMobile ? (
             <a
-              href="tel:+639951590071"
+              href="tel:+639177711211"
               className="px-10 py-5 border border-white/20 text-white font-medium uppercase tracking-widest hover:border-gold-400 hover:text-gold-400 transition-all duration-500 backdrop-blur-md flex items-center gap-2 shadow-md animate-pulse-glow"
             >
               <Phone size={20} /> Call Now
