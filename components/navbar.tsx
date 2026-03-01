@@ -45,7 +45,10 @@ export default function Navbar() {
             alt="Maz Plumbing And Electrical Services Logo"
             className="h-10 w-10 object-cover rounded-full"
           />
-          <span className="text-slate-300 text-xl font-bold tracking-wide">Maz Plumbing And Electrical Services</span>
+          <div className="flex flex-col">
+            <span className="text-slate-300 text-xl font-bold tracking-wide">Maz Plumbing And Electrical Services</span>
+            <span className="text-slate-500 text-sm">Owned by Mark Shy</span>
+          </div>
         </a>
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-10">
