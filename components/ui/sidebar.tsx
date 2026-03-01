@@ -269,39 +269,46 @@ function SidebarTrigger({
 
 // ---------------------- FIXED COMPONENTS WITH ASCHILD + REFS ---------------------- //
 
+// SidebarGroupLabel
 const SidebarGroupLabel = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<'div'> & { asChild?: boolean }
 >(({ className, asChild = false, ...props }, ref) => {
-  const Comp = asChild ? Slot : 'div';
+  const Comp = asChild ? Slot : 'div'
 
-  // If using Slot, cast ref to HTMLElement
   const handleRef = (instance: HTMLElement | null) => {
-    if (!ref) return;
-    if (typeof ref === 'function') ref(instance as HTMLDivElement);
-    else (ref as React.MutableRefObject<HTMLDivElement | null>).current = instance as HTMLDivElement;
-  };
+    if (!ref) return
+    if (typeof ref === 'function') ref(instance as HTMLDivElement)
+    else if ('current' in ref) (ref as React.MutableRefObject<HTMLDivElement | null>).current = instance as HTMLDivElement
+  }
 
   return (
     <Comp
-      ref={asChild ? handleRef : ref} // only use handleRef when asChild
+      ref={asChild ? handleRef : (ref as React.Ref<HTMLDivElement>)}
       data-slot="sidebar-group-label"
       data-sidebar="group-label"
-      className={cn('...', className)}
+      className={cn('flex items-center gap-2 px-2 py-1', className)}
       {...props}
     />
-  );
-});
+  )
+})
 
+// SidebarGroupAction
 const SidebarGroupAction = React.forwardRef<
-  React.ElementRef<typeof Slot>,
+  HTMLButtonElement,
   React.ComponentPropsWithoutRef<'button'> & { asChild?: boolean }
 >(({ className, asChild = false, ...props }, ref) => {
   const Comp = asChild ? Slot : 'button'
 
+  const handleRef = (instance: HTMLElement | null) => {
+    if (!ref) return
+    if (typeof ref === 'function') ref(instance as HTMLButtonElement)
+    else if ('current' in ref) (ref as React.MutableRefObject<HTMLButtonElement | null>).current = instance as HTMLButtonElement
+  }
+
   return (
     <Comp
-      ref={ref}
+      ref={asChild ? handleRef : (ref as React.Ref<HTMLButtonElement>)}
       data-slot="sidebar-group-action"
       data-sidebar="group-action"
       className={cn(
@@ -315,8 +322,9 @@ const SidebarGroupAction = React.forwardRef<
   )
 })
 
+// SidebarMenuButton
 const SidebarMenuButton = React.forwardRef<
-  React.ElementRef<typeof Slot>,
+  HTMLButtonElement,
   React.ComponentPropsWithoutRef<'button'> &
     VariantProps<typeof sidebarMenuButtonVariants> & {
       asChild?: boolean
@@ -327,9 +335,15 @@ const SidebarMenuButton = React.forwardRef<
   const Comp = asChild ? Slot : 'button'
   const { isMobile, state } = useSidebar()
 
+  const handleRef = (instance: HTMLElement | null) => {
+    if (!ref) return
+    if (typeof ref === 'function') ref(instance as HTMLButtonElement)
+    else if ('current' in ref) (ref as React.MutableRefObject<HTMLButtonElement | null>).current = instance as HTMLButtonElement
+  }
+
   const button = (
     <Comp
-      ref={ref}
+      ref={asChild ? handleRef : (ref as React.Ref<HTMLButtonElement>)}
       data-slot="sidebar-menu-button"
       data-sidebar="menu-button"
       data-size={size}
@@ -340,7 +354,6 @@ const SidebarMenuButton = React.forwardRef<
   )
 
   if (!tooltip) return button
-
   const tooltipProps = typeof tooltip === 'string' ? { children: tooltip } : tooltip
 
   return (
@@ -351,15 +364,22 @@ const SidebarMenuButton = React.forwardRef<
   )
 })
 
+// SidebarMenuSubButton
 const SidebarMenuSubButton = React.forwardRef<
-  React.ElementRef<typeof Slot>,
+  HTMLAnchorElement,
   React.ComponentPropsWithoutRef<'a'> & { asChild?: boolean; size?: 'sm' | 'md'; isActive?: boolean }
 >(({ asChild = false, size = 'md', isActive = false, className, ...props }, ref) => {
   const Comp = asChild ? Slot : 'a'
 
+  const handleRef = (instance: HTMLElement | null) => {
+    if (!ref) return
+    if (typeof ref === 'function') ref(instance as HTMLAnchorElement)
+    else if ('current' in ref) (ref as React.MutableRefObject<HTMLAnchorElement | null>).current = instance as HTMLAnchorElement
+  }
+
   return (
     <Comp
-      ref={ref}
+      ref={asChild ? handleRef : (ref as React.Ref<HTMLAnchorElement>)}
       data-slot="sidebar-menu-sub-button"
       data-sidebar="menu-sub-button"
       data-size={size}
