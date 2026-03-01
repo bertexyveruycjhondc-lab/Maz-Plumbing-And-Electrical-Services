@@ -160,7 +160,7 @@ export default function Navbar() {
                 alt="Mark Shy"
                 className="w-48 h-48 rounded-full object-cover mb-4 border-4 border-gold-500"
               />
-              <h4 className="text-white text-xl font-bold mb-2">Mark Shy</h4>
+              <h4 className="text-white text-xl font-bold mb-2">Mark Anthony Zaldua</h4>
               <p className="text-slate-200 text-center font-light">
                 Proud owner of Maz Plumbing And Electrical Services, bringing years of expertise to every project.
               </p>
