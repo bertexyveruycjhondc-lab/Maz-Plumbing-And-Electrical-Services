@@ -270,25 +270,28 @@ function SidebarTrigger({
 // ---------------------- FIXED COMPONENTS WITH ASCHILD + REFS ---------------------- //
 
 const SidebarGroupLabel = React.forwardRef<
-  React.ElementRef<typeof Slot>,
-  React.ComponentPropsWithoutRef<'div'> & { asChild?: boolean }
+  HTMLDivElement,
+  React.ComponentProps<'div'> & { asChild?: boolean }
 >(({ className, asChild = false, ...props }, ref) => {
-  const Comp = asChild ? Slot : 'div'
+  const Comp = asChild ? Slot : 'div';
+
+  // If using Slot, cast ref to HTMLElement
+  const handleRef = (instance: HTMLElement | null) => {
+    if (!ref) return;
+    if (typeof ref === 'function') ref(instance as HTMLDivElement);
+    else (ref as React.MutableRefObject<HTMLDivElement | null>).current = instance as HTMLDivElement;
+  };
 
   return (
     <Comp
-      ref={ref}
+      ref={asChild ? handleRef : ref} // only use handleRef when asChild
       data-slot="sidebar-group-label"
       data-sidebar="group-label"
-      className={cn(
-        'text-sidebar-foreground/70 ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
-        'group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0',
-        className,
-      )}
+      className={cn('...', className)}
       {...props}
     />
-  )
-})
+  );
+});
 
 const SidebarGroupAction = React.forwardRef<
   React.ElementRef<typeof Slot>,
