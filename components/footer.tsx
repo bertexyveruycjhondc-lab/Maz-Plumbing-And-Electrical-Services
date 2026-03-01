@@ -103,7 +103,7 @@ export default function Footer() {
                 <Facebook size={20} />
               </a>
               <a
-                href="mailto:mazplumbelectricalservices@gmail.com"
+                href="mailto:mazplumbelectricalservices@gmail.com?subject=Inquiry&body=Hello Maz Elite"
                 className="w-12 h-12 bg-navy-800 border border-navy-700 rounded-full flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
               >
                 <Mail size={20} />
