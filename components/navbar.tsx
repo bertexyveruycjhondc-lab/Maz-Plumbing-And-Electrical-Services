@@ -15,7 +15,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const phoneNumbers = ['091777111211']
+  const phoneNumbers = ['09173272029', '091777111211']
 
   const handleCallClick = () => {
     setShowCallModal(true)
