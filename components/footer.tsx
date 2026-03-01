@@ -1,7 +1,13 @@
 'use client'
-import { Facebook, Mail } from 'lucide-react'
+import { Facebook, Mail, X } from 'lucide-react'
+import { useState } from 'react'
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false)
+  const [showTermsModal, setShowTermsModal] = useState(false)
+  const [showSitemapModal, setShowSitemapModal] = useState(false)
+
   return (
     <footer className="bg-navy-900 border-t border-navy-700">
       <div className="container mx-auto px-6 py-16">
@@ -20,7 +26,6 @@ export default function Footer() {
       className="w-full h-full object-cover"
     />
   </div>
-
   {/* Company Name */}
   <span className="text-3xl font-serif font-bold text-gold-500">
     Maz Plumbing and Electrical Service
@@ -133,19 +138,88 @@ export default function Footer() {
               © {currentYear} Maz Plumbing and Electrical Service. All rights reserved.
             </p>
             <div className="flex gap-8">
-              <a href="#" className="text-slate-500 hover:text-gold-400 text-sm transition-colors">
+              <button onClick={() => setShowPrivacyModal(true)} className="text-slate-500 hover:text-gold-400 text-sm transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-slate-500 hover:text-gold-400 text-sm transition-colors">
+              </button>
+              <button onClick={() => setShowTermsModal(true)} className="text-slate-500 hover:text-gold-400 text-sm transition-colors">
                 Terms of Service
-              </a>
-              <a href="#" className="text-slate-500 hover:text-gold-400 text-sm transition-colors">
+              </button>
+              <button onClick={() => setShowSitemapModal(true)} className="text-slate-500 hover:text-gold-400 text-sm transition-colors">
                 Sitemap
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Privacy Policy Modal */}
+      {showPrivacyModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300">
+          <div className="bg-navy-900 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 border border-gold-500/30 transform scale-95 animate-modal-pop gold-gradient-bg relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-navy-900/50 opacity-50"></div>
+            <button 
+              onClick={() => setShowPrivacyModal(false)} 
+              className="absolute top-4 right-4 text-gold-300 hover:text-gold-500 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            <h3 className="text-gold-400 text-2xl font-serif font-bold mb-6 relative z-10">
+              Privacy Policy
+            </h3>
+            <p className="text-slate-200 mb-6 relative z-10 font-light">
+              At Maz Plumbing and Electrical Service, we value your privacy. This policy outlines how we collect, use, and protect your personal information. [Add full privacy policy details here.]
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Terms of Service Modal */}
+      {showTermsModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300">
+          <div className="bg-navy-900 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 border border-gold-500/30 transform scale-95 animate-modal-pop gold-gradient-bg relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-navy-900/50 opacity-50"></div>
+            <button 
+              onClick={() => setShowTermsModal(false)} 
+              className="absolute top-4 right-4 text-gold-300 hover:text-gold-500 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            <h3 className="text-gold-400 text-2xl font-serif font-bold mb-6 relative z-10">
+              Terms of Service
+            </h3>
+            <p className="text-slate-200 mb-6 relative z-10 font-light">
+              By using our services, you agree to these terms. This includes our service agreements, payment terms, and liability limitations. [Add full terms of service details here.]
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Sitemap Modal */}
+      {showSitemapModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300">
+          <div className="bg-navy-900 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 border border-gold-500/30 transform scale-95 animate-modal-pop gold-gradient-bg relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-navy-900/50 opacity-50"></div>
+            <button 
+              onClick={() => setShowSitemapModal(false)} 
+              className="absolute top-4 right-4 text-gold-300 hover:text-gold-500 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            <h3 className="text-gold-400 text-2xl font-serif font-bold mb-6 relative z-10">
+              Sitemap
+            </h3>
+            <ul className="text-slate-200 relative z-10 font-light space-y-2">
+              <li><a href="#home" className="hover:text-gold-400">Home</a></li>
+              <li><a href="#services" className="hover:text-gold-400">Services</a></li>
+              <li><a href="#about" className="hover:text-gold-400">About Us</a></li>
+              <li><a href="#portfolio" className="hover:text-gold-400">Portfolio</a></li>
+              <li><a href="#testimonials" className="hover:text-gold-400">Testimonials</a></li>
+              <li><a href="#contact" className="hover:text-gold-400">Contact</a></li>
+              {/* Add more links as needed */}
+            </ul>
+          </div>
+        </div>
+      )}
     </footer>
   )
 }
