@@ -59,6 +59,12 @@ export default function Services() {
      icon: PaintBucket,
      image: '/services/paint.jpg',
     },
+     {
+     title: 'Water Proofing Mastery',
+     desc: 'Professional waterproofing services that protect your property from leaks, moisture damage, and structural deterioration, ensuring long-lasting durability, enhanced protection, and reliable performance in all weather conditions.',
+     icon: PaintBucket,
+     image: '/services/proofing.jpg',
+    },
     {
       title: 'Painting Expertise',
       desc: 'Exquisite flooring options, professional laying, and durable surfaces for sophisticated and resilient foundations.',
