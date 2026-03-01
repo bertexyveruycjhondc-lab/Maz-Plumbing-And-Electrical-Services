@@ -54,7 +54,6 @@ export default function Navbar() {
           />
           <div className="flex flex-col">
             <span className="text-slate-300 text-xl font-bold tracking-wide">Maz Plumbing And Electrical Services</span>
-            <span className="text-slate-500 text-sm">Owned by Mark Shy</span>
           </div>
         </a>
         {/* Desktop Menu */}
