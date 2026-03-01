@@ -23,6 +23,55 @@ export default function Services() {
       icon: Home,
       image: '/services/renovation.jpg',
     },
+    
+    {
+      title: 'Modular Cabinets Excellence',
+      desc: 'Customizable storage solutions, innovative configurations, and superior quality for organized elegance in any space.',
+      icon: Box,
+      image: '/services/cabinets.jpg',
+    },
+    {
+      title: 'Electrical Wiring Expertise',
+      desc: 'Advanced electrical installations, safety-compliant wiring, and efficient systems for reliable power delivery.',
+      icon: Zap,
+      image: '/services/electrical.jpg',
+    },
+    {
+      title: 'Plumbing Services Mastery',
+      desc: 'Precision pipework, leak-proof fixtures, and comprehensive plumbing solutions for seamless water management.',
+      icon: Wrench,
+      image: '/services/plumbing.jpg',
+    },
+    {
+      title: 'Kitchen Renovation Mastery',
+      desc: 'Gourmet kitchen transformations, high-end appliances, and ergonomic designs for culinary excellence and comfort.',
+      icon: Utensils,
+      image: '/services/kitchen.jpg',
+    },
+    {
+      title: 'Roof Renovation Excellence',
+      desc: 'Durable roofing materials, expert repairs, and weather-resistant installations for lasting protection and aesthetics.',
+      icon: Hammer,
+      image: '/services/roof.jpg',
+    },
+    {
+     title: 'Water Pump Installation',
+     desc: 'Professional water pump installation for consistent water pressure, energy-efficient operation, and long-lasting performance tailored to your property’s needs.',
+     icon: PaintBucket,
+     image: '/services/paint.jpg',
+    },
+    {
+      title: 'Painting Expertise',
+      desc: 'Exquisite flooring options, professional laying, and durable surfaces for sophisticated and resilient foundations.',
+      icon: Layers,
+      image: '/services/floor.jpg',
+    },
+    {
+      title: 'Floor Tile Expert',
+desc: 'Professional floor tile installation and repair, ensuring smooth, durable, and visually appealing flooring for any residential or commercial space.',
+icon: Wrench,
+      image: '/services/floor-tile experting.jpg',
+    },
 
   ]
 
