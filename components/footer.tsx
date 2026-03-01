@@ -112,13 +112,13 @@ export default function Footer() {
             <h4 className="text-white font-serif font-bold text-lg mb-6">Connect With Us</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/Malcolm2916"
                 className="w-12 h-12 bg-navy-800 border border-navy-700 rounded-full flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="#"
+                href="mailto:mazplumbelectricalservices@gmail.com"
                 className="w-12 h-12 bg-navy-800 border border-navy-700 rounded-full flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
               >
                 <Mail size={20} />
