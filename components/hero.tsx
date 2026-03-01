@@ -10,7 +10,7 @@ export default function Hero() {
     setIsMobile(/Mobi|Android|iPad|iPhone/i.test(navigator.userAgent))
   }, [])
 
-  const phoneNumbers = ['09951590071', '091777111211']
+  const phoneNumbers = ['09173272029', '091777111211']
 
   const handleCallClick = () => {
     setShowModal(true)
