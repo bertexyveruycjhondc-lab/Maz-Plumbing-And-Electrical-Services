@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { Menu, X, Phone } from 'lucide-react'
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -35,7 +36,9 @@ export default function Navbar() {
     { name: 'Contact', href: '#contact' },
     { name: 'Owner', href: '#', onClick: handleOwnerClick },
   ]
+
   const handleLinkClick = () => setIsOpen(false)
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-500 ${
@@ -94,18 +97,15 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <div className="mt-2 space-y-2">
-              {phoneNumbers.map((number, index) => (
-                <a
-                  key={index}
-                  href={`tel:+63${number.slice(1)}`}
-                  onClick={handleLinkClick}
-                  className="text-gold-500 font-bold text-lg flex items-center gap-2 cursor-pointer hover:text-gold-400 transition-colors"
-                >
-                  <Phone size={20} /> Call: {number}
-                </a>
-              ))}
-            </div>
+            <button
+              onClick={() => {
+                handleCallClick()
+                handleLinkClick()
+              }}
+              className="mt-2 px-8 py-3 gold-gradient text-navy-900 hover:from-gold-600 hover:to-gold-500 transition-all duration-300 text-sm uppercase tracking-widest font-semibold flex items-center gap-2 shadow-md cursor-pointer hover:scale-105 justify-center"
+            >
+              <Phone size={20} /> Reserve Now
+            </button>
           </div>
         </div>
       )}
@@ -113,8 +113,8 @@ export default function Navbar() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300">
           <div className="bg-navy-900 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 border border-gold-500/30 transform scale-95 animate-modal-pop gold-gradient-bg relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-navy-900/50 opacity-50"></div>
-            <button 
-              onClick={() => setShowCallModal(false)} 
+            <button
+              onClick={() => setShowCallModal(false)}
               className="absolute top-4 right-4 text-gold-300 hover:text-gold-500 transition-colors"
             >
               <X size={24} />
@@ -145,8 +145,8 @@ export default function Navbar() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300">
           <div className="bg-navy-900 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 border border-gold-500/30 transform scale-95 animate-modal-pop gold-gradient-bg relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-navy-900/50 opacity-50"></div>
-            <button 
-              onClick={() => setShowOwnerModal(false)} 
+            <button
+              onClick={() => setShowOwnerModal(false)}
               className="absolute top-4 right-4 text-gold-300 hover:text-gold-500 transition-colors"
             >
               <X size={24} />
