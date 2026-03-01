@@ -42,7 +42,7 @@ export default function Services() {
       image: '/services/plumbing.jpg',
     },
     {
-      title: 'Kitchen Renovation Mastery',
+      title: 'Kitchen Modular Expert',
       desc: 'Gourmet kitchen transformations, high-end appliances, and ergonomic designs for culinary excellence and comfort.',
       icon: Utensils,
       image: '/services/kitchen.jpg',
