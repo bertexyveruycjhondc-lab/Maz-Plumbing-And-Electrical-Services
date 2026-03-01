@@ -1,10 +1,7 @@
 'use client'
-
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
-
+import { Facebook, Mail } from 'lucide-react'
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-
   return (
     <footer className="bg-navy-900 border-t border-navy-700">
       <div className="container mx-auto px-6 py-16">
@@ -18,7 +15,6 @@ export default function Footer() {
               Elevating home maintenance to an art form with unparalleled plumbing and electrical mastery.
             </p>
           </div>
-
           {/* Services */}
           <div>
             <h4 className="text-white font-serif font-bold text-lg mb-6">Services</h4>
@@ -70,7 +66,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
           {/* Company */}
           <div>
             <h4 className="text-white font-serif font-bold text-lg mb-6">Company</h4>
@@ -97,7 +92,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
           {/* Social */}
           <div>
             <h4 className="text-white font-serif font-bold text-lg mb-6">Connect With Us</h4>
@@ -112,24 +106,11 @@ export default function Footer() {
                 href="#"
                 className="w-12 h-12 bg-navy-800 border border-navy-700 rounded-full flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
               >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 bg-navy-800 border border-navy-700 rounded-full flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 bg-navy-800 border border-navy-700 rounded-full flex items-center justify-center text-gold-500 hover:bg-gold-500 hover:text-navy-900 transition-all duration-300"
-              >
-                <Linkedin size={20} />
+                <Mail size={20} />
               </a>
             </div>
           </div>
         </div>
-
         {/* Divider */}
         <div className="border-t border-navy-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
